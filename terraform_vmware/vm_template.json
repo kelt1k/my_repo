@@ -32,7 +32,7 @@
                 "<wait2m>",
                 "<enter><wait2><enter><wait><enter><wait><enter><wait><enter><wait>",
                 "<enter><wait2><enter><wait2><enter><wait2><enter><wait2><down><wait><enter>",
-                "paker<tab>",
+                "{{user `os_user`}}<tab>",
                 "ubuntu1804<tab>",
                 "{{user `ssh_username`}}<tab>",
                 "{{user `ssh_password`}}<tab>",
