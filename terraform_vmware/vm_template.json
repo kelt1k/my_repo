@@ -1,0 +1,52 @@
+{
+    "builders": [
+        {
+            "vcenter_server": "{{ user `vcenter_server`}}",
+            "username": "{{ user `username`}}",
+            "password": "{{user `password`}}",
+            "insecure_connection": "true",
+            "convert_to_template": "true",
+            "host": "{{user `host`}}",
+            "cluster": "{{user `cluster`}}",
+            "datastore": "{{user `datastore`}}",
+            "network": "{{user `network`}}",
+            "resource_pool": "{{user `resource_pool`}}",
+            "network_card": "vmxnet3",
+            "type": "vsphere-iso",
+            "boot_order": "disk,cdrom",
+            "iso_urls": "http://ubuntu.colocall.net/ubuntu-releases/18.04/ubuntu-18.04.4-live-server-amd64.iso",
+            "iso_checksum": "5c43d0b0ade0b554c2d51c85e5f0095b",
+            "iso_checksum_type": "MD5",
+            "ssh_username": "{{user `ssh_username`}}",
+            "ssh_password": "{{user `ssh_password`}}",
+            "ssh_timeout": "15m",
+            "ssh_clear_authorized_keys": true,
+            "guest_os_type": "Ubuntu64Guest",
+            "disk_size": 10000,
+            "disk_thin_provisioned": "true",
+            "cpus": 2,
+            "RAM": 2048,
+            "vm_name": "packer_ubuntu_18.04-amd64",
+            "boot_wait": "40s",
+            "boot_command": [
+                "<wait2m>",
+                "<enter><wait2><enter><wait><enter><wait><enter><wait><enter><wait>",
+                "<enter><wait2><enter><wait2><enter><wait2><enter><wait2><down><wait><enter>",
+                "paker<tab>",
+                "ubuntu1804<tab>",
+                "{{user `ssh_username`}}<tab>",
+                "{{user `ssh_password`}}<tab>",
+                "{{user `ssh_password`}}<tab><enter>",
+                "<enter><wait2><enter><tab><wait><tab><enter><wait5><tab><enter><wait10><wait10><wait10><wait10><wait10>",
+                "<wait10><wait10><wait10><wait10><wait10><wait10>",
+                "<wait10><wait10><wait10><wait10><wait10><wait10>",
+                "<wait10><wait10><wait10><wait10><wait10><wait10>",
+                "<wait10><wait10><wait10><wait10><wait10><wait10>",
+                "<wait10><wait10><wait10><wait10><wait10><wait10>",
+                "<wait10><wait10><wait10><wait10><wait10><wait10>",
+                "<enter><wait10>",
+                "<enter>"
+            ]
+        }
+    ]
+}
